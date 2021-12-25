@@ -1,51 +1,32 @@
-userName = input("please give your name: ")
-# emailName = input("please give your proper email address ")
-password = input("Give a proper password: ")
-rePassword = input("Re enter the password: ")
-temp = 0
-wrt = 0
+def emailVerifier(email):
+    lenEm = len(email)
+    print("length of your email is :- ", lenEm)
+    temp = 0
 
-# CHECK FIRST CHAR IS UPPERCASE
-if password[0].isupper():
-    wrt = wrt+1
-else:
-    temp = 1
-    print("first character can not be in small case")
+    if (email.find('@') == -1):
+        print("@ missing")
+        temp = temp+1
 
-# CHECK USER NAME IN IT
-if userName in password:
-    temp = 1
-    print("your password can not contain user name")
-else:
-    wrt = wrt+1
+    apt = email.find("@")
+    dot = email.find(".")
 
-# checking the length
-if len(password) >= 8 or len(password) >= 16:
-    print(len(password))
-    wrt = wrt+1
-else:
-    temp = 1
-    print(len(password))
-    print("Your password has be range of 8 to 16")
+    if (email.find('@') != -1):
+        if email.find(".", apt) < email.find("@"):
+            print("invalid check domain again")
+            temp = temp+1
+    else:
+        if email.find(".") == -1:
+            print(". is also missing")
+    if (dot-apt) == 1:
+        print("provider is missing")
+        temp = temp+1
 
-# for checking both password are same
-if password == rePassword:
-    wrt = wrt+1
-else:
-    print("please give same password in both fild")
-    temp = 1
+    del apt
+    if temp == 0:
+        print("It is a vaild email")
 
-# for checking special char
-spl = 0
-for i in list(password):
-    # print(i)
-    if i in "[@_!#$%^&*()<>?/|}{~:]":
-        spl = spl+1
-        break
-if spl == 0:
-    temp = 1
-    print("does not have a special char")
 
-# print(temp)
-if temp == 0:
-    print("your password is a proper password")
+email = input("Enter your email:- ")
+
+# email = "hrithik.mallick20@gmail.com"
+emailVerifier(email)
