@@ -12,6 +12,7 @@ else:
     print("first character can not be in small case")
 
 # CHECK USER NAME IN IT
+
 if userName in password:
     temp = 1
     print("your password can not contain user name")
@@ -19,13 +20,13 @@ else:
     wrt = wrt+1
 
 # checking the length
-if len(password) >= 8 or len(password) >= 16:
+if len(password) >= 8 and len(password) <= 16:
     print(len(password))
     wrt = wrt+1
 else:
     temp = 1
     print(len(password))
-    print("Your password has be range of 8 to 16")
+    print("Your password has to be range of 8 to 16")
 
 # for checking both password are same
 if password == rePassword:
