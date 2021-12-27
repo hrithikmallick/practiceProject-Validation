@@ -34,7 +34,11 @@ def emailVerifier(email):
 # ATLAST RESULT
     if temp == 0:
         print("It is a vaild email")
+        return True
+    else:
+        False
 
 
 email = input("Enter your email:- ")
-emailVerifier(email)
+tmp = emailVerifier(email)
+print(tmp)
