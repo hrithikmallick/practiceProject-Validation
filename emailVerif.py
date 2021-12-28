@@ -36,9 +36,11 @@ def emailVerifier(email):
         print("It is a vaild email")
         return True
     else:
-        False
+        return False
 
 
-email = input("Enter your email:- ")
-tmp = emailVerifier(email)
-print(tmp)
+# email = input("Enter your email:- ")
+# tmp = emailVerifier(email)
+# print(tmp)
+
+# UNCOMMENT IT FOR IF USING NON MODULE WISE
